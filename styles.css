@@ -1,0 +1,723 @@
+/*navbar styles*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+}
+
+.navbar {
+    background-color: #2294e7;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: linear-gradient(to right, #fcfcfc -25%, #00bfff 70%, #2294e7 95%);
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+
+}
+
+#navbar__logo {
+    background-color: #9fcef1;
+    background-image: linear-gradient(to top, #2f3844 0%, #5ebfc3 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.navbar__logo-image {
+    height: 75px;
+    width: auto; 
+    padding: 1px;
+    transition: all 0.2s ease;
+}
+
+.navbar__logo-image:hover {
+    filter: drop-shadow(0 0 1px rgba(1, 70, 113, 0.8))
+            drop-shadow(0 0 5px rgba(0, 255, 255, 0.8)); 
+}
+
+/*this is if i need logo picture next to sig prob wont use tho*/
+/*.fa-gem {
+    margin-right: 0.5rem;
+
+}*/
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar__item {
+    height: 80px;
+}
+
+.navbar__links {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-left: 50px;
+    padding: 0 1rem;
+    height: 100%;
+    transition: color 0.3s ease-out; 
+}
+
+/*fix dis*/
+.navbar__links:hover {
+    color: white;
+    /* background is ugly lol, keep ease tho
+    background: #2294e7; */
+}
+
+/*dis doesnt work for other tabs- come back later*/
+.navbar__links:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20;
+    width: var(--underline-width, 0);
+    height: 5px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.navbar__links:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/*trying to make it to work with mobile/small window. will implement once i figure dis shit out
+
+@media screen and (max-width: 1440px) {
+    .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .navbar__menu {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5 ease;
+        height: 50vh;
+        z-index: -1;
+        background: #a8c9f0;
+    }
+
+    .navbar__menu.active {
+        background: #1f3044;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5 ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.6rem;
+    }
+
+    #navbar__logo {
+        padding-left: 25px;
+    }
+
+    .navbar__toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: white;
+    }
+
+    .navbar__item {
+        width: 100%;
+
+    }
+
+    .navbar__links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+        z-index: 1000;
+    }
+
+}   */
+
+
+/*homepage css styles*/
+
+.greet {
+    margin-left: 100px;
+    margin-top: 200px;
+    display: flex; 
+    text-align: right; 
+    justify-content: flex-start; 
+    align-items: center;
+    font-size: 50px;
+}
+
+.name {
+    position: absolute;
+    margin-left: 450px;
+    margin-top: 50px;
+    font-size: 100px;
+    font-weight: bold;  
+    background: linear-gradient(to right, #fcfcfc -25%, #00bfff 70%, #2294e7 95%); 
+    -webkit-background-clip: text; 
+    color: transparent;
+}
+
+.me-image {
+    position: absolute;
+    top: 50%;  
+    left: 77%; 
+    transform: translate(-50%, -50%); 
+    width: 500px;
+    border: 3px solid #2294e7;
+    box-shadow: 0 0 10px #5ebfc3;
+    border-radius: 5px;
+    /* trying the above one worked smoother lol 
+    width: 500px;
+    margin-top: 100px;
+    margin-right: 100px;
+    margin-left: 700px;
+    margin-bottom: 0px;*/
+}
+
+.desc {
+    position: relative;
+    margin-top: 300px;
+    background: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%); 
+    -webkit-background-clip: text; 
+    color: transparent;
+    margin-left: 50px;
+    font-size: 33px;
+}
+
+.aboutme {
+    position: relative;
+    margin-left: 50px;
+    margin-top: 250px;
+    font-size: 60px;
+    background: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);  
+    -webkit-background-clip: text; 
+    color: transparent;
+}
+
+.aboutme::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 23.5%;
+    height: 4px;
+    background-image: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.aboutme:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.aboutmeblurb {
+    margin-left: 600px;
+    margin-top: -600px;
+    margin-right: 50px;
+    margin-bottom: 150px;
+    font-size: 30px;
+    background: #2294e7;  
+    -webkit-background-clip: text; 
+    color: transparent;
+    border: 3px solid #2294e7;
+    box-shadow: 0 0 10px #5ebfc3;
+    border-radius: 5px;  
+    padding: 10px;    
+}
+
+.about-me-image {
+    position: relative;
+    width: 35%;
+    margin-left: 50px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    border: 3px solid #2294e7;
+    box-shadow: 0 0 10px #5ebfc3;
+    border-radius: 5px; 
+    
+}
+
+.no-break {
+    white-space: nowrap;
+    color: black;
+    background: linear-gradient(to right, black -25%, #2c505c 70%, #024473 95%); 
+    -webkit-background-clip: text; 
+    color: transparent;
+}
+
+/*portfolio page styles*/
+
+.Projects {
+    font-size: 60px;
+    background: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);  
+    -webkit-background-clip: text; 
+    color: transparent;
+    position: relative;
+    margin-left: 10px;
+}
+.Projects::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 18.95%; 
+    height: 4px;
+    background-image: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+.Projects:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.Publications_Papers {
+    font-size: 60px;
+    background: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);  
+    -webkit-background-clip: text; 
+    color: transparent;
+    position: relative;
+    margin-left: 10px;
+}
+.Publications_Papers::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 46.7%; 
+    height: 4px;
+    background-image: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.Publications_Papers:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+.nonstem {
+    font-size: 60px;
+    background: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);  
+    -webkit-background-clip: text; 
+    color: transparent;
+    position: relative;
+    margin-left: 10px;
+}
+
+.nonstem::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 53.95%; 
+    height: 4px;
+    background-image: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.nonstem:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr); 
+    gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.projt {
+    font-size: large;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.project-name {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.desc-proj-mag{
+    height: auto; 
+    transform: translateY(8px);
+}
+
+.slider-mag {
+    width: 570px;
+    height: 400px;
+    overflow: hidden;
+    border: 3px solid #2294e7;
+    box-shadow: 0 0 10px #5ebfc3;
+    border-radius: 5px;
+    transform: translateY(8px);
+}
+
+.skills-used {
+    font-size: 15px;
+}
+
+
+/*slideshow styes*/
+.slider {
+    width: 570px;
+    height: 400px;
+    overflow: hidden;
+    border: 3px solid #2294e7;
+    box-shadow: 0 0 10px #5ebfc3;
+    border-radius: 5px;
+}
+
+.slides {
+    width: 500%;   
+    height: 500px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 20%;
+    transition: 2s; 
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*manual 4 llp*/
+
+.manual {
+    position: absolute;
+    width: 600px;
+    margin-top:-140px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.manual-btn{
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 30px;
+}
+
+.manual-btn:hover{
+    background: black;
+}
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+    margin-left: -60%;
+}
+
+/*auto 4 llp*/
+
+.auto {
+    position: absolute;
+    display: flex;
+    width: 600px;
+    justify-content: center;
+    margin-top: 360px;
+}
+
+.auto div {
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+
+}
+
+.auto div:not(:last-child){
+    margin-right: 30px;
+}
+
+#radio1:checked ~ .auto .auto-btn1 {
+    background: black;
+}
+
+#radio2:checked ~ .auto .auto-btn2 {
+    background: black;
+}
+
+#radio3:checked ~ .auto .auto-btn3 {
+    background: black;
+}
+
+#radio4:checked ~ .auto .auto-btn4 {
+    background: black;
+}
+
+
+/*beyond stem*/
+
+.ravel {
+    text-decoration: none;
+    color: black;
+    transition: color 0.4s ease-out;
+}
+.ravel:hover {
+    color: #2294e7;
+    
+}
+
+/*CONTACT PAGE STYLES*/
+
+#contact-me {
+    /*potenial bground color background-color: rgb(244, 241, 241); might use smthing else tho*/
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+#contact-me h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);  
+    -webkit-background-clip: text; 
+    color: transparent;
+  }
+  
+#contact-me p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+.contact-link {
+    color: black;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid #2294e7;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+.contact-link:hover {
+    background-color: #2294e7;
+    color: white;
+  }
+
+.contact-image {
+    width: 50px;   
+    height: auto;  
+    margin-left: -10px
+}
+
+.contact-image-email {
+    width: 35px;
+    height: auto;
+    margin-right: 10px;
+
+}
+
+.contact-image-resume {
+    width: 40px;
+    height: auto;
+    margin-right: 5px;
+    margin-left: -5px;
+
+}
+
+.phone {
+    font-size: 1.2rem;
+    margin-top: 30px;
+}
+  
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f1f1f1;
+    color: #555;
+  }
+
+
+/*experience tab styles*/
+
+.education  {
+    font-size: 60px;
+    background: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);  
+    -webkit-background-clip: text; 
+    color: transparent;
+    position: relative;
+    margin-left: 10px;
+}
+
+
+
+.work_experience {
+    font-size: 60px;
+    background: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);  
+    -webkit-background-clip: text; 
+    color: transparent;
+    position: relative;
+    margin-left: 10px;
+}
+
+.skills-header {
+    font-size: 60px;
+    background: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);  
+    -webkit-background-clip: text; 
+    color: transparent;
+    position: relative;
+    margin-left: 10px;
+}
+
+
+/*experience-tabbed interface stuff-edu*/
+.tab {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.tab.active {
+    background-color: #ddd;
+    font-weight: bold;
+}
+
+.pee-tab, .csds-tab {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.pee-tab.active, .csds-tab.active {
+    display: block;
+}
+
+
+/*experience-tabbed interface-skills*/
+.tab1 {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.tab1.active {
+    background-color: #ddd;
+    font-weight: bold;
+}
+
+.skills {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.skills.active{
+    display: block;
+}
+
+.secret-links {
+    /*make this so its not obvious to click, but when hovering make it do something funny*/
+    display: inline-block;
+
+}
+
+footer {
+    position: relative;
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tylerjung</title>
+    <link rel="stylesheet" href="styles.css">   
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">
+                <img src= "images/sig_img.png" alt="Tyler's Signature" class="navbar__logo-image">
+            </a>
+            <div class="navbar___toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/projectspubs.html" class="navbar__links">
+                        My Portfolio
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/experience.html" class="navbar__links">
+                        Experience
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/contact.html" class="navbar__links">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <main>
+
+    
+
+    <h1 class="education">
+        Education
+        <h2 class="school">
+            University of California, Berkeley
+            <h3 class="year/major">
+                Class of 2026, Major: Physics and Data Science, Minor: Electrical Engineering and Computer Science (EECS)
+            </h3>
+            <h4 class="coursework">
+                Relevant Coursework
+            </h4>
+                <div>
+                    <div class="tab active" onclick="showTabclasses('physics/ee')">
+                        Physics/Electrical Engineering Courses
+                    </div>
+                    <div class="tab" onclick="showTabclasses('cs/ds')">
+                        Computer Science/Data Science/Mathematics Courses
+                    </div>
+                </div>
+                <div id="physics/ee" class="pee-tab active">
+                    <ul>
+                        <li>Foundations of Signals, Dynamical Systems, and Information Processing (EECS16A)</li>
+                        <li>Honors Electromagnetism, Waves, and Optics (PHYSICS5B)</li>
+                        <li>Experimental Physics I (Circuits/Electronics, Optics/Lasers) (PHYSICS5BL)</li>
+                        <li>Honors Mechanics and Relativity (PHYSICS5A)</li>
+                        <li>Honors Thermodynamics and Quantum Mechanics (PHYSICS5C)</li>
+                    </ul>
+                </div>
+                <div id="cs/ds" class="csds-tab">
+                    <ul>
+                        <li>Data Structures (CS61B)</li>
+                        <li>Principles & Techniques of Data Science (DATAC100)</li>
+                        <li>Linear Algebra, Differential Equations and Fourier Methods (PHYSICS89)</li>
+                        <li>Computational Structures in Data Science (DATAC88C)</li>
+                        <li>Foundations of Data Science (DATAC8)</li>
+                        <li>Multivariable and Vector Calculus (MATH53)</li>
+                    </ul>
+                </div>
+                <script src="app.js"></script>
+        </h2>
+
+    </h1>
+    <h1 class="work_experience">
+        Work Experience
+
+        <h3 class="timeframe">
+            May 2024-August 2024
+         <h2 class="job">
+            BLCK UNICRN
+            </h2>
+        </h3>
+
+        <h3 class="timeframe">
+            June 2022-December 2022
+        
+         <h2 class="job">
+            State University of New York at Albany, RNA Institute, Lee Lab
+            </h2>
+        </h3>
+
+        <h3 class="timeframe">
+            March 2021-June 2023
+         <h2 class="job">
+            Modu Sushi
+            </h2>
+        </h3>
+
+    </h2>  
+    <h1 class="skills-header">
+        Skills
+        </h1>
+        <div>
+            <div class="tab1 active" onclick="showTabskills('technical')">
+                Technical
+            </div>
+            <div class="tab1" onclick="showTabskills('personal')">
+                Personal
+            </div>
+        </div>
+        <div id="technical" class="skills active">
+            <ul>
+                <li>Python (and associated libraries)</li>
+                <li>Arduino</li>
+                <li>HTML/CSS/JavaScript</li>
+                <li>Java</li>
+                <li>C++</li>
+                <li>Oscilloscopes/Function Generators/Digital Multimeters</li>
+                <li>CAD</li>
+                <li>SQL</li>
+                <li>LaTeX</li>
+                <li>MS Suite</li>
+                <li>Git/Github/Version Control</li>
+                <li>MATLAB</li>
+            </ul>
+        </div>
+        <div id="personal" class="skills">
+            <ul>
+                <li>Violin (2x New York All-State)</li>
+                <li>Viola/Piano (Amateur)</li>
+                <li>Korean</li>
+                <li>Taekwondo (Kukkiwon Certified 2nd Dan Black Belt)</li>
+                <li>Haedong Gumdo (World Haidong Gumdo Federation 1st Dan Black Belt)</li>
+                <li>
+                    <a href="https://www.youtube.com/@tylerjung882/videos" target="_blank" class="secret-links">
+                    Speedcubing
+                    </a>
+                </li> <!-- link this cuh-->
+                <li>Cooking Sushi</li> 
+            </ul>
+        </div>
+                <!--add orgs bro-->
+
+    </main> 
+</body>
+
+<footer>
+    <p>&copy; 2025 Tyler Jung | All rights reserved</p>
+    <p>made with love ❤️</p>
+  </footer>
+  <script src="hometypewriter.js"></script>
+</html>
