@@ -193,10 +193,11 @@
 
 
 /*homepage css styles*/
-
+/*THIS whole part needs debugging*/
 .greet {
-    margin-left: 100px;
-    margin-top: 200px;
+    position: relative;
+    margin-left: 2em;
+    margin-top: 3em;
     display: flex; 
     text-align: right; 
     justify-content: flex-start; 
@@ -205,14 +206,21 @@
 }
 
 .name {
-    position: absolute;
-    margin-left: 450px;
-    margin-top: 50px;
+    position: relative ;
+    margin-left: -1em;
+    margin-top: 0.5em;
     font-size: 100px;
     font-weight: bold;  
     background: linear-gradient(to right, #fcfcfc -25%, #00bfff 70%, #2294e7 95%); 
     -webkit-background-clip: text; 
     color: transparent;
+    width: 100%;    
+}
+
+.begin {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .me {
@@ -221,14 +229,15 @@
 }
 
 .me-image {
-    position: absolute;
-    top: 50%;  
-    left: 77%; 
+    position: absolute; 
     transform: translate(-50%, -50%); 
-    width: 500px;
+    width: 40%;
     border: 3px solid #2294e7;
     box-shadow: 0 0 10px #5ebfc3;
     border-radius: 5px;
+    margin-right: 1000px;
+    left: 75%;
+    top: 80%;
 }
 
 .desc {
@@ -241,7 +250,7 @@
     margin-right: 14em;
 }
 
-
+/*//////////*/
 .aboutme {
     position: relative;
     font-size: 60px;
@@ -249,7 +258,7 @@
     -webkit-background-clip: text; 
     color: transparent;
     display: inline-block;
-    margin-top: 4em;
+    margin-top: 5em;
 }
 
 .aboutme::after {
@@ -321,7 +330,7 @@
     -webkit-background-clip: text; 
     color: transparent;
     position: relative;
-    margin-left: 10px;
+    margin-left: 0.5em;
     display: inline-block;
 }
 .Projects::after {
@@ -347,7 +356,7 @@
     -webkit-background-clip: text; 
     color: transparent;
     position: relative;
-    margin-left: 10px;
+    margin-left: 0.5em;
     display: inline-block;
 }
 .Publications_Papers::after {
@@ -375,7 +384,7 @@
     -webkit-background-clip: text; 
     color: transparent;
     position: relative;
-    margin-left: 10px;
+    margin-left: 0.5em;
     display: inline-block;
 }
 
@@ -847,7 +856,7 @@ footer {
     -webkit-background-clip: text; 
     color: transparent;
     position: relative;
-    margin-left: 10px;
+    margin-left: 0.5em;
     display: inline-block;
 }
 
@@ -892,7 +901,7 @@ footer {
 
 .coursework {
     text-align: center; 
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .work_experience {
@@ -901,7 +910,7 @@ footer {
     -webkit-background-clip: text; 
     color: transparent;
     position: relative;
-    margin-left: 10px;
+    margin-left: 0.5em;
     display: inline-block;
 }
 
@@ -949,7 +958,7 @@ footer {
     -webkit-background-clip: text; 
     color: transparent;
     position: relative;
-    margin-left: 10px;
+    margin-left: 0.5em;
     display: inline-block;
 }
 
