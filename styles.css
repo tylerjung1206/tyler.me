@@ -96,14 +96,12 @@
     transition: color 0.3s ease-out; 
 }
 
-/*fix dis*/
+/*fixed*/
 .navbar__links:hover {
     color: white;
-    /* background is ugly lol, keep ease tho
-    background: #2294e7; */
 }
 
-/*dis doesnt work for other tabs- come back later*/
+/*works now*/
 .navbar__links:after {
     content: "";
     position: absolute;
@@ -122,7 +120,7 @@
     transform-origin: bottom left;
 }
 
-/*trying to make it to work with mobile/small window. will implement once i figure dis shit out
+/*trying to make it have a mobile/small window tab options. will implement once i figure dis out
 
 @media screen and (max-width: 1440px) {
     .navbar__container {
@@ -411,6 +409,8 @@
     font-size: large;
     margin-left: 40px;
     margin-right: 40px;
+    transform: scale(1);
+    transform-origin: top left;
 }
 
 .project-name {
@@ -426,6 +426,8 @@
 
 .skills-used {
     font-size: 15px;
+    color:rgb(101, 101, 8);
+    font-style: bold;
 }
 
 
@@ -437,7 +439,6 @@
     border: 3px solid #2294e7;
     box-shadow: 0 0 10px #5ebfc3;
     border-radius: 5px;
-    margin-right: -100px;
 }
 
 .slides {
@@ -551,7 +552,7 @@
     border: 3px solid #2294e7;
     box-shadow: 0 0 10px #5ebfc3;
     border-radius: 5px;
-    margin-right: -100px;
+    
 }
 
 .slides-mag {
@@ -685,7 +686,7 @@
     object-fit: cover;
 }
 
-/*manual-mag 4 llp*/
+/*manual-worm 4 llp*/
 .manual-worm {
     position: absolute;
     width: 600px;
@@ -718,7 +719,7 @@
     margin-left: -20%;
 }
 
-/*auto-mag 4 llp*/
+/*auto-worm 4 llp*/
 .auto-worm {
     position: absolute;
     display: flex;
@@ -768,7 +769,7 @@
   }
   
 #contact-me h2 {
-    font-size: 2.5rem;
+    font-size: 5rem;
     margin-bottom: 20px;
     background: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);  
     -webkit-background-clip: text; 
@@ -776,7 +777,7 @@
   }
   
 #contact-me p {
-    font-size: 1.2rem;
+    font-size: 2rem;
     margin-bottom: 30px;
   }
   
@@ -785,6 +786,7 @@
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    font-size: 2em;
   }
   
 .contact-link {
@@ -825,7 +827,7 @@
 }
 
 .phone {
-    font-size: 1.2rem;
+    font-size: 2rem;
     margin-top: 30px;
 }
   
@@ -846,12 +848,31 @@ footer {
     color: transparent;
     position: relative;
     margin-left: 10px;
+    display: inline-block;
+}
+
+.education:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%; 
+    height: 4px;
+    background-image: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.education:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .school-container {
     display: flex;
     align-items: flex-start; 
-    gap: 20px; 
+    gap: 40px; 
 }
 
 .school-logo {
@@ -866,10 +887,12 @@ footer {
 
 .year_major {
     font-size: 15px;
+    color:rgb(101, 101, 8);
 }
 
 .coursework {
     text-align: center; 
+    font-size: 30px;
 }
 
 .work_experience {
@@ -879,7 +902,46 @@ footer {
     color: transparent;
     position: relative;
     margin-left: 10px;
+    display: inline-block;
 }
+
+.work_experience:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%; 
+    height: 4px;
+    background-image: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.work_experience:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.work-container {
+    border: 3px solid #2294e7;
+    box-shadow: 0 0 10px #5ebfc3;
+    border-radius: 5px;
+    padding: 30px;
+    margin-left: 100px;
+    margin-right:100px;
+
+}
+
+.timeframe {
+    font-size: 20px;
+    color:rgb(101, 101, 8);
+}
+
+.job {
+    font-size: 40px;       
+}
+
 
 .skills-header {
     font-size: 60px;
@@ -888,8 +950,32 @@ footer {
     color: transparent;
     position: relative;
     margin-left: 10px;
+    display: inline-block;
 }
 
+.skills-header:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%; 
+    height: 4px;
+    background-image: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.skills-header:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /*experience-tabbed interface stuff-edu*/
 
@@ -902,16 +988,18 @@ footer {
     display: inline-block;
     padding: 10px 20px;
     margin: 5px;
-    background-color: #f0f0f0;
     cursor: pointer;
     border: 3px solid #2294e7;
     box-shadow: 0 0 10px #5ebfc3;
     border-radius: 5px;
+    transition: background-color 0.5s ease-in-out;
+    font-size: 25px;
 
 }
 
 .tab.active {
-    background-color: #ddd;
+    background-color: #2294e7;
+    color: white;
     font-weight: bold;
 }
 
@@ -925,7 +1013,10 @@ footer {
     border-radius: 5px;
     justify-content: center;
     margin-left: 100px;
-    margin-right: 100px;
+    margin-right:100px;
+    font-size: 30px;
+    padding-left: 40px;
+    background-color:#ccc ;
 }
 
 .pee-tab.active, .csds-tab.active {
@@ -938,34 +1029,49 @@ footer {
     display: inline-block;
     padding: 10px 20px;
     margin: 5px;
-    background-color: #f0f0f0;
     cursor: pointer;
-    border: 1px solid #ccc;
+    border: 3px solid #2294e7;
+    box-shadow: 0 0 10px #5ebfc3;
     border-radius: 5px;
+    transition: background-color 0.5s ease-in-out;
+    font-size: 30px;
 }
 
 .tab1.active {
-    background-color: #ddd;
+    background-color: #2294e7;
     font-weight: bold;
+    color: white
 }
 
 .skills {
     display: none;
-    padding: 20px;
-    border: 1px solid #ccc;
+    padding: 30px 50px;
     margin-top: 10px;
+    border: 3px solid #2294e7;
+    box-shadow: 0 0 10px #5ebfc3;
     border-radius: 5px;
+    margin-bottom: 2em;
+    font-size: 30px;
 }
 
 .skills.active{
     display: block;
+    background-color:#ccc ;
 }
 
 .secret-links {
     /*make this so its not obvious to click, but when hovering make it do something funny*/
     display: inline-block;
+    text-decoration: none; 
+    color: inherit; 
+    transition: color 0.2s ease;
+}
+
+.secret-links:hover {
+    color: #2294e7;
 
 }
+
 
 footer {
     position: relative;
