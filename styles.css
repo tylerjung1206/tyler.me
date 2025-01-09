@@ -3,7 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat';
+    font-family: 'Lato';
     transform-origin: top left;
     transition: transform 0.3s ease-out;
 }
@@ -217,6 +217,11 @@
     color: transparent;
 }
 
+.me {
+    text-align: center;
+    flex-direction: column;
+}
+
 .me-image {
     position: absolute;
     top: 50%;  
@@ -226,32 +231,27 @@
     border: 3px solid #2294e7;
     box-shadow: 0 0 10px #5ebfc3;
     border-radius: 5px;
-    /* trying the above one worked smoother lol 
-    width: 500px;
-    margin-top: 100px;
-    margin-right: 100px;
-    margin-left: 700px;
-    margin-bottom: 0px;*/
 }
 
 .desc {
     position: relative;
-    margin-top: 300px;
     background: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%); 
     -webkit-background-clip: text; 
     color: transparent;
-    margin-left: 50px;
-    font-size: 33px;
+    font-size: 40px;
+    margin-top: 7em;
+    margin-right: 14em;
 }
+
 
 .aboutme {
     position: relative;
-    margin-left: 50px;
-    margin-top: 250px;
     font-size: 60px;
     background: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);  
     -webkit-background-clip: text; 
     color: transparent;
+    display: inline-block;
+    margin-top: 4em;
 }
 
 .aboutme::after {
@@ -259,7 +259,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 23.5%;
+    width: 100%;
     height: 4px;
     background-image: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);
     transform: scaleX(0);
@@ -272,11 +272,17 @@
     transform-origin: bottom left;
 }
 
+.about-me-image img{
+    position: relative;
+    width: 80%;
+    border: 3px solid #2294e7;
+    box-shadow: 0 0 10px #5ebfc3;
+    border-radius: 5px; 
+    display: block;
+    margin-left: 2em;
+}
+
 .aboutmeblurb {
-    margin-left: 600px;
-    margin-top: -600px;
-    margin-right: 50px;
-    margin-bottom: 150px;
     font-size: 30px;
     background: #2294e7;  
     -webkit-background-clip: text; 
@@ -285,18 +291,20 @@
     box-shadow: 0 0 10px #5ebfc3;
     border-radius: 5px;  
     padding: 10px;    
+    margin-right: 1em;
 }
 
-.about-me-image {
-    position: relative;
-    width: 35%;
-    margin-left: 50px;
-    margin-bottom: 100px;
-    margin-top: 50px;
-    border: 3px solid #2294e7;
-    box-shadow: 0 0 10px #5ebfc3;
-    border-radius: 5px; 
-    
+.about-me-container {
+    margin-bottom: 3em;
+}
+
+
+.blurb-container {
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start;
+    padding: 20px;
+    margin-bottom: 5em;
 }
 
 .no-break {
@@ -316,13 +324,14 @@
     color: transparent;
     position: relative;
     margin-left: 10px;
+    display: inline-block;
 }
 .Projects::after {
     content: "";
     position: absolute;
     bottom: -5px;
     left: 0;
-    width: 18.95%; 
+    width: 100%; 
     height: 4px;
     background-image: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);
     transform: scaleX(0);
@@ -341,13 +350,14 @@
     color: transparent;
     position: relative;
     margin-left: 10px;
+    display: inline-block;
 }
 .Publications_Papers::after {
     content: "";
     position: absolute;
     bottom: -5px;
     left: 0;
-    width: 46.7%; 
+    width: 100%; 
     height: 4px;
     background-image: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);
     transform: scaleX(0);
@@ -368,6 +378,7 @@
     color: transparent;
     position: relative;
     margin-left: 10px;
+    display: inline-block;
 }
 
 .nonstem::after {
@@ -375,7 +386,7 @@
     position: absolute;
     bottom: -5px;
     left: 0;
-    width: 53.95%; 
+    width: 100%; 
     height: 4px;
     background-image: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);
     transform: scaleX(0);
@@ -410,17 +421,7 @@
 
 .desc-proj-mag{
     height: auto; 
-    transform: translateY(8px);
-}
-
-.slider-mag {
-    width: 570px;
-    height: 400px;
-    overflow: hidden;
-    border: 3px solid #2294e7;
-    box-shadow: 0 0 10px #5ebfc3;
-    border-radius: 5px;
-    transform: translateY(8px);
+    
 }
 
 .skills-used {
@@ -847,7 +848,29 @@ footer {
     margin-left: 10px;
 }
 
+.school-container {
+    display: flex;
+    align-items: flex-start; 
+    gap: 20px; 
+}
 
+.school-logo {
+    margin-left:40px;
+    width: 80px; 
+    height: auto; 
+}
+
+.school-text {
+    display: flex;
+}
+
+.year_major {
+    font-size: 15px;
+}
+
+.coursework {
+    text-align: center; 
+}
 
 .work_experience {
     font-size: 60px;
@@ -869,14 +892,22 @@ footer {
 
 
 /*experience-tabbed interface stuff-edu*/
+
+.class-container {
+    display: flex;
+    justify-content: center;
+}
+
 .tab {
     display: inline-block;
     padding: 10px 20px;
     margin: 5px;
     background-color: #f0f0f0;
     cursor: pointer;
-    border: 1px solid #ccc;
+    border: 3px solid #2294e7;
+    box-shadow: 0 0 10px #5ebfc3;
     border-radius: 5px;
+
 }
 
 .tab.active {
@@ -887,9 +918,14 @@ footer {
 .pee-tab, .csds-tab {
     display: none;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 3px solid #2294e7;
+    box-shadow: 0 0 10px #5ebfc3;
+    border-radius: 5px;
     margin-top: 10px;
     border-radius: 5px;
+    justify-content: center;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .pee-tab.active, .csds-tab.active {
