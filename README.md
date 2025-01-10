@@ -4,9 +4,9 @@ Welcome to my personal website! Here, you'll find information about my projects,
 
 ## Table of Contents
 
-- [Projects & Publications](/tyler.me/projectspubs.html)
-- [Experience](/tyler.me/experience.html)
-- [Contact](/tyler.me/contact.html)
+- [Projects & Publications](/projectspubs.html)
+- [Experience](/experience.html)
+- [Contact](/contact.html)
 
 ## Contact
 
