@@ -193,51 +193,70 @@
 
 
 /*homepage css styles*/
-/*THIS whole part needs debugging*/
-.greet {
-    position: relative;
-    margin-left: 2em;
-    margin-top: 3em;
-    display: flex; 
-    text-align: right; 
-    justify-content: flex-start; 
-    align-items: center;
-    font-size: 50px;
-}
 
-.name {
-    position: relative ;
-    margin-left: -1em;
-    margin-top: 0.5em;
-    font-size: 100px;
-    font-weight: bold;  
-    background: linear-gradient(to right, #fcfcfc -25%, #00bfff 70%, #2294e7 95%); 
-    -webkit-background-clip: text; 
-    color: transparent;
-    width: 100%;    
-}
-
-.begin {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
+/*THIS whole part needs debugging--> fixed scalimng issues*/
 
 .me {
     text-align: center;
-    flex-direction: column;
+    flex-direction: row;
+}
+.begin {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;  
 }
 
+.left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+
+.right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 3em;
+    margin-top: 3em;
+}
+
+.greet {
+    position: relative;
+    font-size: 3.3vw;
+    text-align: right;
+}
+
+.name {
+    bottom: 0;
+    left: 0;
+    position: relative; 
+    background: linear-gradient(to right, #fcfcfc -25%, #00bfff 70%, #2294e7 95%); 
+    -webkit-background-clip: text; 
+    color: transparent;
+    font-style: bold;
+    font-size: 9vw; 
+    margin-left: 18.5vw;
+
+}
+
+.name-filler {
+    visibility: hidden;
+}
+
+
 .me-image {
-    position: absolute; 
-    transform: translate(-50%, -50%); 
     width: 40%;
     border: 3px solid #2294e7;
     box-shadow: 0 0 10px #5ebfc3;
     border-radius: 5px;
-    margin-right: 1000px;
-    left: 75%;
-    top: 80%;
+    max-width: 800px;
+    width: 90%;
+    margin-top: 3em;
 }
 
 .desc {
@@ -245,12 +264,10 @@
     background: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%); 
     -webkit-background-clip: text; 
     color: transparent;
-    font-size: 40px;
-    margin-top: 7em;
-    margin-right: 14em;
+    font-size: 3.3vw;
+    text-align: right;
 }
 
-/*//////////*/
 .aboutme {
     position: relative;
     font-size: 60px;
@@ -258,7 +275,7 @@
     -webkit-background-clip: text; 
     color: transparent;
     display: inline-block;
-    margin-top: 5em;
+    margin-top: 3em;
 }
 
 .aboutme::after {
