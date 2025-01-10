@@ -221,7 +221,7 @@
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    margin-right: 3em;
+    margin-right: 1em;
     margin-top: 3em;
 }
 
@@ -350,6 +350,7 @@
     margin-left: 0.5em;
     display: inline-block;
 }
+
 .Projects::after {
     content: "";
     position: absolute;
@@ -425,12 +426,17 @@
 
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(2,1fr); 
-    gap: 50px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; 
+    margin-top: 2.5%; 
+    margin-bottom: 5%;
+    transition: all 0.3s ease-in-out;
 }
-
+@media (max-width: 1200px) {
+    .projects-container {
+        grid-template-columns: 1fr; 
+    }
+}
 .projt {
     font-size: large;
     margin-left: 40px;
@@ -438,6 +444,7 @@
     transform: scale(1);
     transform-origin: top left;
 }
+
 
 .project-name {
     font-size: 30px;
