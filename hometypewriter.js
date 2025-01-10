@@ -38,7 +38,7 @@ setTimeout(nametype, 2100);
 const nameText = document.getElementById('name');
 
 nameText.addEventListener('mouseenter', function() {
-    this.style.textShadow = '0 0 8px rgba(0, 191, 255, 0.7), 0 0 15px rgba(0, 191, 255, 0.7), 0 0 20px rgba(34, 148, 231, 0.7)';
+    this.style.textShadow = '0 0 4px rgba(0, 191, 255, 0.4), 0 0 8px rgba(0, 191, 255, 0.4), 0 0 12px rgba(34, 148, 231, 0.4)';
 });
 
 nameText.addEventListener('mouseleave', function() {

@@ -1,5 +1,5 @@
 
-//typewriter effect for connect page yay
+//typewriter effect for connect page
 const text = "Reach me via any of the links below:";
 let index = 0;
 const speed = 80;
@@ -34,4 +34,3 @@ function showTabskills(tabId) {
     document.getElementById(tabId).classList.add('active');
 }
 
-// make sure it stays on the color when on the page or change hover shit to just be the letters

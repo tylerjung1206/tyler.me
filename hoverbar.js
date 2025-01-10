@@ -1,4 +1,4 @@
-//hover bar thingy width adjustment for navbar only working for home page atm
+//hover bar thingy width adjustment and implementation
 document.addEventListener("DOMContentLoaded", function () {
     const navbarLinks = document.querySelectorAll(".navbar__links");
 

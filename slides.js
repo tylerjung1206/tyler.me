@@ -1,3 +1,5 @@
+//these are for the slideshows on portfolio
+
 function cycleButtons(word) {
     var counter = 1;
 
