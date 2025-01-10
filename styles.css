@@ -8,6 +8,16 @@
     transition: transform 0.3s ease-out;
 }
 
+#particles-js {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ebe9e9;
+    z-index: -1; /*dont want it to be interactable*/
+}
+
 /** {
     transform-origin: top left;
     transition: transform 0.3s ease-out;
@@ -190,8 +200,6 @@
     }
 
 }   */
-
-
 /*homepage css styles*/
 
 /*THIS whole part needs debugging--> fixed scalimng issues*/
@@ -200,6 +208,7 @@
     text-align: center;
     flex-direction: row;
 }
+
 .begin {
     display: flex;
     flex-direction: row;
@@ -235,10 +244,9 @@
     bottom: 0;
     left: 0;
     position: relative; 
-    background: linear-gradient(to right, #fcfcfc -25%, #00bfff 70%, #2294e7 95%); 
+    background: linear-gradient(to right, #fcfcfc -75%, #00bfff 70%, #2294e7 95%); 
     -webkit-background-clip: text; 
     color: transparent;
-    font-style: bold;
     font-size: 9vw; 
     margin-left: 18.5vw;
 
@@ -308,9 +316,7 @@
 
 .aboutmeblurb {
     font-size: 30px;
-    background: #2294e7;  
-    -webkit-background-clip: text; 
-    color: transparent;
+    color: black;
     border: 3px solid #2294e7;
     box-shadow: 0 0 10px #5ebfc3;
     border-radius: 5px;  
@@ -333,10 +339,9 @@
 
 .no-break {
     white-space: nowrap;
-    color: black;
-    background: linear-gradient(to right, black -25%, #2c505c 70%, #024473 95%); 
-    -webkit-background-clip: text; 
-    color: transparent;
+    color: #2294e7;
+    text-decoration: none;
+    text-shadow: 0 0 10px #5ebfc3;
 }
 
 /*portfolio page styles*/
@@ -869,6 +874,7 @@ footer {
     padding: 20px 0;
     background-color: #f1f1f1;
     color: #555;
+    position: relative;
   }
 
 
@@ -963,6 +969,7 @@ footer {
     padding: 30px;
     margin-left: 100px;
     margin-right:100px;
+    background-color: #f2f2f2;
 
 }
 
@@ -1027,6 +1034,7 @@ footer {
     border-radius: 5px;
     transition: background-color 0.5s ease-in-out;
     font-size: 25px;
+    background-color: #f2f2f2;
 
 }
 
@@ -1049,7 +1057,7 @@ footer {
     margin-right:100px;
     font-size: 30px;
     padding-left: 40px;
-    background-color:#ccc ;
+    background-color:#f2f2f2 ;
 }
 
 .pee-tab.active, .csds-tab.active {
@@ -1068,12 +1076,13 @@ footer {
     border-radius: 5px;
     transition: background-color 0.5s ease-in-out;
     font-size: 30px;
+    background-color: #f2f2f2;
 }
 
 .tab1.active {
     background-color: #2294e7;
     font-weight: bold;
-    color: white
+    color: white;
 }
 
 .skills {
@@ -1089,7 +1098,7 @@ footer {
 
 .skills.active{
     display: block;
-    background-color:#ccc ;
+    background-color:#f2f2f2 ;
 }
 
 .secret-links {
@@ -1103,9 +1112,4 @@ footer {
 .secret-links:hover {
     color: #2294e7;
 
-}
-
-
-footer {
-    position: relative;
 }
