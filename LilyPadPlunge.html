@@ -54,8 +54,8 @@
   }
     .image-slider {
       position: relative;
-      width: 600px;
-      height: 400px;
+      width: 400px;
+      height: 500px;
       overflow: hidden;
       border: 3px solid #2294e7;
       box-shadow: 0 0 10px #5ebfc3;
@@ -144,50 +144,48 @@
     </div>
   </nav>
 
-  <h1 class="Projects">InTuner</h1>
+  <h1 class="Projects">Lily Pad Plunge</h1>
 
   <section class="content-section">
     <div class="content-row">
       <div class="image-slider">
-        <img src="images/InTuner/breadboard.png"class="slide active" />
-        <img src="images/InTuner/violin.png"class="slide" />
+        <img src="images/lilypadplunge/frontpic.jpeg"class="slide active" />
+        <img src="images/lilypadplunge/cad.png"class="slide" />
         <div class="slider-controls">
           <button class="prev">&#10094;</button>
           <button class="next">&#10095;</button>
         </div>
       </div>
       <div class="content-text">
-        <h2>What is InTuner and what sets it apart from other tuners?</h2>
+        <h2>What is Lily Pad Plunge?</h2>
         <p>
-          InTuner is a practice device designed for advanced violinists who are looking to sharped
-          their intonation. It's 2 main features: feedback and performance mode, are optimized to give
-          violinists a quick and accurate assessment on how in-tune they are playing.
+          Lily Pad Plunge is a new twist to arcade gaming that presents a variety of challenges to players.
+          The game has up, down, left, right, and drop button controls to move and drop the frog onto moving lilypads below.
+          The goal of the game is to drop the frog onto as many pads before the allowed time passes, with smaller pads netting more points.
         </p>
         <br>
+        <h2>My role in Lily Pad Plunge</h2>
         <p>
-         I developed InTuner because I found most widely available tuners have issues with either latency or accuracy (or both), 
-         mainly because they are used simply to tune the instrument, not to analyze the continuous intonation of the violinist.
-         At an advanced level, intonation is very difficult to perfect and relies on the smallest changes in finger positioning. 
-         This inspired me to create a device designed specifically for intonation practice that gives extremely accurate feedback on 
-         the notes played and at a rate much faster than what most tuners do.
+         As the Electrical and Systems Integration Engineer of our team, I designed the functional and power efficient circuitry, developed the embedded framework, and
+         worked with the mechanical and software teams to fully integrate the game to work with seamless control. This project was not only a great test our technical ability,
+         but a great opportunity to create a remarkable product with my amazing team! I can't imagine this coming to fruition without them. 
         </p>
       </div>
     </div>
 
     <div class="content-row reverse">
       <div class="content-text">
-        <h2>Beyond the Spotlight</h2>
+        <h2>Electrical Design</h2>
         <p>
-          InTuner heavily utilizes the Fast Fourier Transform in its computations. As a project that resides within the physical constraints of its hardware,
-          many optimizations in the signal processing in relation to computation speed, frequency resolution, and memory were made. The program (written in C++) takes the recieved
-          analog signal in batches of 8192 samples and puts it through a computational process that is shorter than the speed at which data is recieved, removing latency. This process 
-          involves removing DC offset, applying the Fourier Transform to the batch, and analyzing it based on which mode it is set at. In the program, I optimized factors such as sampling frequency and 
-          method runtime by developing efficient algorithms and testing with real violin playing to find ideal values. You can check out my code and files <a href="https://github.com/tylerjung1206/InTuner" target="_blank" rel="noopener noreferrer">here</a>.
-        </p>
+        The major challenges in the electrical design lie in the sheer amount of components and parts that require both power and programming. The system includes servo motors, sensors, buttons, and an LCD, which all also needed
+        to be programmed to respond based on user input. The power distribution was designed first through simulation, then integrated with embedded needs. The microcontroller (Arduino Mega) was programmed in C++ and directed gantry control, frog release,
+        lily pad motion, score count/timer, and display settings. In our final product,
+        we succesfully optimized the power distribution such that the entire device could operate reliably powered with just 2 9V batteries, while ensuring all mechanical components responded accurately and consistently. This was achieved through utilizing buck converters and
+        capacitors for stable power conversion.
       </div>
       <div class="image-slider">
-        <img src="images/InTuner/code.png" class="slide active" />
-        <img src="images/InTuner/signals.JPEG"  class="slide" />
+        <img src="images/lilypadplunge/inside.jpeg" class="slide active" />
+        <img src="images/lilypadplunge/better2.png"  class="slide" />
         <div class="slider-controls">
           <button class="prev">&#10094;</button>
           <button class="next">&#10095;</button>
@@ -197,42 +195,56 @@
 
     <div class="content-row">
       <div class="image-slider">
-        <img src="images/InTuner/jupyter.png" class="slide active" />
-        <img src="images/InTuner/schematic.png" class="slide" />
+        <img src="images/lilypadplunge/gantry.png" class="slide active" />
+        <img src="images/lilypadplunge/buttons.png" class="slide" />
         <div class="slider-controls">
           <button class="prev">&#10094;</button>
           <button class="next">&#10095;</button>
         </div>
       </div>
       <div class="content-text">
-        <h2>Preliminary Design and Prototyping</h2>
+        <h2>Mechanical Design</h2>
         <p>
-          I started the project by drafting up some python code in Jupyter Notebook to better understand the FFT in the context of violin intonation. 
-          While developing some early python methods for analysis, I recognized many factors that complicated my progress, such as the range of notes on the violin, 
-          the logarithmic relationship between frequency and pitch, and identifying ways to assess signals for performance mode, where the microphone listens for one 
-          minute while the violinist plays. Initial attempts included ideas such as pipelining data to a computer using the ESP32's wifi function, but this was deemed inefficient
-          and overly complicated. 
+            We began by designing a gantry system capable of smooth movement across 
+            three axes of motion. The gantry features a cross-shaped structure with 
+            its sides attached to belts, enabling precise and fluid movement. 
+            Next, we designed the machine's frame: a simple box structure that accommodates 
+            the electrical components and conveyor belts. Our arcade machine is scaled down 
+            from traditional sizes, making it more compact and portable for home use and travel.
         </p>
         <br>
         <p>
-        For the hardware itself, I first started with SPICE simulations in a basic circuit, then moved onto systems level development with breadboard testing. This involved hardware-software integration where
-        components and filters, such as the low pass filter, were determined along with computational requirements. Button features, the lcd feedback, and power management were also jointly implemented.
+            The frame is constructed from 1/4" plywood with dimensions of 12" (length) x
+             12" (width) x 24" (height). Finally, we created the console housing in CAD,
+              designed to hold the control buttons for maneuvering the gantry system and an 
+              LCD screen to display real-time game progress. Beneath the buttons and LCD, we 
+              allocated space for the electrical components that operate these controls. The 
+              CAD design incorporated interference fits to securely hold the buttons and LCD 
+              in place, eliminating the need for adhesives that 
+            could potentially damage the components, an approach that proved successful.
         </p>
       </div>
     </div> 
 
     <div class="content-row reverse">
       <div class="content-text">
-        <h2>Physical Design</h2>
+        <h2>Software Design</h2>
         <p>
-          After functional completion, I aimed to create a compact version that could rest on a practice stand for the violinist. I replicated my schematic in Eagle and
-          adjusted it so it fit the soldering needs of components such as the microphone. Following that, I designed the PCB allowing, choosing components that could be solderable by hand and
-          had minimal power loss. I also designed the CAD model so the outer shell could hold the PCB and battery. All the files can be checked out in the Github repository linked above.
+            The button inputs controls for frog movement along x and y axes uses a boolean state to toggle between game start and drop actions. 
+            The frog's position is tracked with coordinate variables and boundaries to prevent movement beyond set limits.
+        </p>
+        <br>
+        <p>
+            The scoring system updates a points variable based on lily pad size, 
+            using calibration variables set at game start. 
+            A dropCount variable tracks attempts, switching a gameState variable 
+            to “game over” after three drops. The score variable updates continuously on the LCD, and input processing is disabled when the gameState indicates the game has ended.
+            The program also accounts for end to end user interactions with the LCD feedback/button inputs to start and end the game.
         </p>
       </div>
       <div class="image-slider">
-        <img src="images/InTuner/final_schematic.png" class="slide active" />
-        <img src="images/InTuner/pcb.png"class="slide" />
+        <img src="images/lilypadplunge/code.png" class="slide active" />
+        <img src="images/lilypadplunge/3.jpeg"class="slide" />
         <div class="slider-controls">
           <button class="prev">&#10094;</button>
           <button class="next">&#10095;</button>
