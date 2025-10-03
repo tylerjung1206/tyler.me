@@ -1214,3 +1214,10 @@ h1.Projects {
     line-height: 1.6;
     color: #333;
 }
+
+.work-logo {
+    height: 100px;  
+    width: auto;
+    object-fit: contain;
+    margin-right: 15px; 
+}
