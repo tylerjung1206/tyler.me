@@ -139,6 +139,258 @@ body {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+/* Overlay: hidden by default (only used on mobile) */
+.navbar__overlay {
+    display: none;
+}
+
+/* Mobile: hide hamburger on desktop */
+.navbar___toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.navbar___toggle .bar {
+    width: 25px;
+    height: 3px;
+    background: #111;
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.navbar___toggle.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.navbar___toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar___toggle.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* ========== MOBILE STYLES (max-width: 768px) ========== */
+@media screen and (max-width: 768px) {
+    .navbar___toggle {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .navbar__container {
+        padding: 0 20px;
+    }
+
+    .navbar__menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 280px;
+        height: 100vh;
+        background: linear-gradient(180deg, #fcfcfc 0%, #00bfff 40%, #2294e7 100%);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        padding: 80px 0 40px;
+        transition: right 0.3s ease;
+        box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+        z-index: 1000;
+    }
+
+    .navbar__menu.active {
+        right: 0;
+    }
+
+    .navbar__item {
+        height: auto;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .navbar__links {
+        margin-left: 0;
+        padding: 1rem 1.5rem;
+        justify-content: center;
+        width: 100%;
+        color: #111;
+        font-size: 1.1rem;
+    }
+
+    .navbar__links:hover {
+        color: white;
+        background: rgba(0,0,0,0.1);
+    }
+
+    .navbar__links::after {
+        display: none;
+    }
+
+    /* Overlay when menu open */
+    .navbar__overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.4);
+        z-index: 999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .navbar__overlay.active {
+        display: block;
+        opacity: 1;
+    }
+
+    /* Homepage mobile layout */
+    .begin {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 0;
+        gap: 1.5rem;
+    }
+
+    .left {
+        align-items: center;
+        text-align: center;
+    }
+
+    .greet,
+    .desc {
+        text-align: center;
+    }
+
+    .me-image {
+        max-width: 280px;
+    }
+
+    .blurb-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        margin-bottom: 3em;
+    }
+
+    .about-me-image img {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+
+    .aboutmeblurb {
+        margin-right: 0;
+        margin-left: 0;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .aboutme {
+        font-size: 2rem;
+        margin-top: 2em;
+    }
+
+    /* Projects/Experience mobile */
+    .projects-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .projt {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .slider,
+    .slider-website,
+    .slider-mag,
+    .slider-worm,
+    .peltier-slider {
+        width: 100%;
+        max-width: 100%;
+        height: 220px;
+    }
+
+    .Projects,
+    .Publications_Papers,
+    .nonstem,
+    .education,
+    .work_experience,
+    .skills-header {
+        font-size: 2rem;
+        margin-left: 0.5rem;
+    }
+
+    .work-container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .pee-tab,
+    .csds-tab {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .content-section {
+        padding: 2rem 1rem;
+    }
+
+    .content-row {
+        flex-direction: column;
+    }
+
+    .content-row.reverse {
+        flex-direction: column;
+    }
+
+    .image-slider {
+        width: 100%;
+        max-width: 100%;
+        height: 250px;
+    }
+
+    /* Contact page mobile */
+    #contact-me h2 {
+        font-size: 2.5rem;
+    }
+
+    #contact-me p {
+        font-size: 1.2rem;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-link {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+
+    /* Pictures gallery mobile */
+    .gallery-grid {
+        padding: 1rem;
+        gap: 8px;
+    }
+
+    .gallery-img {
+        max-height: 200px;
+    }
+}
+
 /*homepage css styles*/
 
 /*THIS whole part needs debugging--> fixed scalimng issues*/
