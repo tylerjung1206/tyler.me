@@ -1,11 +1,27 @@
-/*navbar styles*/
+/* Global reset & typography */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Lato';
-    transform-origin: top left;
-    transition: transform 0.3s ease-out;
+}
+
+:root {
+    --bg-light: #f5f7fb;
+    --bg-card: #f2f2f2;
+    --accent-blue: #2294e7;
+    --accent-cyan: #00bfff;
+    --text-main: #111111;
+    --text-muted: #555555;
+    --shadow-soft: 0 0 10px rgba(94, 191, 195, 0.55);
+}
+
+body {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
 }
 
 #particles-js {
@@ -24,7 +40,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 35px;
+    font-size: 24px;
     position: sticky;
     top: 0;
     z-index: 999;
@@ -88,13 +104,14 @@
 }
 
 .navbar__links {
+    position: relative;
     color: black;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    margin-left: 50px;
-    padding: 0 1rem;
+    margin-left: 32px;
+    padding: 0 0.75rem;
     height: 100%;
     transition: color 0.3s ease-out; 
 }
@@ -109,7 +126,7 @@
     content: "";
     position: absolute;
     bottom: 0;
-    left: 20;
+    left: 0;
     width: var(--underline-width, 0);
     height: 5px;
     background-color: white;
@@ -122,84 +139,16 @@
     transform: scaleX(1);
     transform-origin: bottom left;
 }
-
-/*trying to make it have a mobile/small window tab options. will implement once i figure dis out
-
-@media screen and (max-width: 1440px) {
-    .navbar__container {
-        display: flex;
-        justify-content: space-between;
-        height: 80px;
-        z-index: 1;
-        width: 100%;
-        max-width: 1300px;
-        padding: 0;
-    }
-
-    .navbar__menu {
-        display: grid;
-        grid-template-columns: auto;
-        margin: 0;
-        width: 100%;
-        position: absolute;
-        top: -1000px;
-        opacity: 0;
-        transition: all 0.5 ease;
-        height: 50vh;
-        z-index: -1;
-        background: #a8c9f0;
-    }
-
-    .navbar__menu.active {
-        background: #1f3044;
-        top: 100%;
-        opacity: 1;
-        transition: all 0.5 ease;
-        z-index: 99;
-        height: 50vh;
-        font-size: 1.6rem;
-    }
-
-    #navbar__logo {
-        padding-left: 25px;
-    }
-
-    .navbar__toggle .bar {
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        transition: all 0.3s ease-in-out;
-        background: white;
-    }
-
-    .navbar__item {
-        width: 100%;
-
-    }
-
-    .navbar__links {
-        text-align: center;
-        padding: 2rem;
-        width: 100%;
-        display: table;
-    }
-
-    #mobile-menu {
-        position: absolute;
-        top: 20%;
-        right: 5%;
-        transform: translate(5%, 20%);
-        z-index: 1000;
-    }
-
-}   */
 /*homepage css styles*/
 
 /*THIS whole part needs debugging--> fixed scalimng issues*/
 
 .me {
     text-align: center;
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 80px);
+    padding: 3rem 1.5rem 4rem;
 }
 
 .begin {
@@ -207,8 +156,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
-    gap: 20px;  
+    padding: 20px 0;
+    gap: 32px;  
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .left {
@@ -216,20 +167,21 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    align-items: flex-end;
 }
 
 
 .right {
     flex: 1;
     display: flex;
-    justify-content: flex-end;
-    margin-right: 1em;
-    margin-top: 3em;
+    justify-content: center;
+    margin-right: 0;
+    margin-top: 1.5em;
 }
 
 .greet {
     position: relative;
-    font-size: 3.3vw;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
     text-align: right;
 }
 
@@ -240,8 +192,8 @@
     background: linear-gradient(to right, #fcfcfc -75%, #00bfff 70%, #2294e7 95%); 
     -webkit-background-clip: text; 
     color: transparent;
-    font-size: 9vw; 
-    margin-left: 18.5vw;
+    font-size: clamp(3rem, 7vw, 5rem); 
+    margin-left: 0;
 
 }
 
@@ -255,9 +207,9 @@
     border: 3px solid #2294e7;
     box-shadow: 0 0 10px #5ebfc3;
     border-radius: 5px;
-    max-width: 800px;
-    width: 90%;
-    margin-top: 3em;
+    max-width: 420px;
+    width: 100%;
+    margin-top: 0;
 }
 
 .desc {
@@ -265,13 +217,13 @@
     background: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%); 
     -webkit-background-clip: text; 
     color: transparent;
-    font-size: 3.3vw;
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
     text-align: right;
 }
 
 .aboutme {
     position: relative;
-    font-size: 60px;
+    font-size: clamp(2.4rem, 4vw, 3.5rem);
     background: linear-gradient(to right, black -25%, #00bfff 70%, #2294e7 95%);  
     -webkit-background-clip: text; 
     color: transparent;
@@ -308,13 +260,14 @@
 }
 
 .aboutmeblurb {
-    font-size: 30px;
+    font-size: clamp(1rem, 2.2vw, 1.3rem);
     color: black;
     border: 3px solid #2294e7;
     box-shadow: 0 0 10px #5ebfc3;
-    border-radius: 5px;  
-    padding: 10px;    
-    margin-right: 1em;
+    border-radius: 10px;  
+    padding: 1.25rem 1.5rem;    
+    margin-right: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .about-me-container {
@@ -326,8 +279,11 @@
     display: flex; 
     align-items: center; 
     justify-content: flex-start;
-    padding: 20px;
+    padding: 20px 0;
     margin-bottom: 5em;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .no-break {
@@ -1174,7 +1130,7 @@ h1.Projects {
 }
 
 .content-section {
-    padding: 4rem 2rem;
+    padding: 4rem 1.5rem;
     max-width: 1100px;
     margin: 0 auto;
 }
