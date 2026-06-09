@@ -5,14 +5,16 @@ const sokdo = 80;
 const element = document.getElementById("greet");
 
 function hometype() {
-    if (i < hometext.length) {
+    if (element && i < hometext.length) {
         element.innerHTML += hometext.charAt(i);
         i++;
         setTimeout(hometype, sokdo);
     }
 }
 
-hometype();
+if (element) {
+    hometype();
+}
 
 //my name
 const nametext = "Tyler."
@@ -21,8 +23,7 @@ const bballi = 200;
 const e = document.getElementById('name');
 
 function nametype() {
-
-    if (j <nametext.length) {
+    if (e && j < nametext.length) {
         const span = document.createElement('span');
         span.innerHTML = nametext.charAt(j);
         e.appendChild(span);
@@ -31,17 +32,19 @@ function nametype() {
     }
 }
 
-setTimeout(nametype, 2100); 
-
+if (e) {
+    setTimeout(nametype, 2100);
+}
 
 //name hover glow
 const nameText = document.getElementById('name');
 
-nameText.addEventListener('mouseenter', function() {
-    this.style.textShadow = '0 0 4px rgba(0, 191, 255, 0.4), 0 0 8px rgba(0, 191, 255, 0.4), 0 0 12px rgba(34, 148, 231, 0.4)';
-});
+if (nameText) {
+    nameText.addEventListener('mouseenter', function() {
+        this.style.textShadow = '0 0 4px rgba(0, 191, 255, 0.4), 0 0 8px rgba(0, 191, 255, 0.4), 0 0 12px rgba(34, 148, 231, 0.4)';
+    });
 
-nameText.addEventListener('mouseleave', function() {
-    this.style.textShadow = 'none';
+    nameText.addEventListener('mouseleave', function() {
+        this.style.textShadow = 'none';
+    });
 }
-)

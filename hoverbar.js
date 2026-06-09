@@ -16,11 +16,16 @@ document.addEventListener("DOMContentLoaded", function () {
         overlay.setAttribute("aria-hidden", "true");
         document.body.appendChild(overlay);
 
+        mobileMenu.setAttribute("role", "button");
+        mobileMenu.setAttribute("aria-label", "Toggle navigation menu");
+        mobileMenu.setAttribute("aria-expanded", "false");
+
         function openMenu() {
             navbarMenu.classList.add("active");
             mobileMenu.classList.add("active");
             overlay.classList.add("active");
             overlay.setAttribute("aria-hidden", "false");
+            mobileMenu.setAttribute("aria-expanded", "true");
             document.body.style.overflow = "hidden";
         }
 
@@ -29,16 +34,21 @@ document.addEventListener("DOMContentLoaded", function () {
             mobileMenu.classList.remove("active");
             overlay.classList.remove("active");
             overlay.setAttribute("aria-hidden", "true");
+            mobileMenu.setAttribute("aria-expanded", "false");
             document.body.style.overflow = "";
         }
 
-        mobileMenu.addEventListener("click", function () {
+        function toggleMenu(event) {
+            event.preventDefault();
+            event.stopPropagation();
             if (navbarMenu.classList.contains("active")) {
                 closeMenu();
             } else {
                 openMenu();
             }
-        });
+        }
+
+        mobileMenu.addEventListener("click", toggleMenu);
 
         overlay.addEventListener("click", closeMenu);
 

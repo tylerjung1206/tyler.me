@@ -154,6 +154,16 @@
 <div class="work-container">
 
     <div class="work-entry">
+        <img src="images/experiences/gm.png" alt="General Motors Logo" class="work-logo">
+        <div class="work-text">
+            <br>
+            <h3 class="timeframe">Jun 2026 - Aug 2026</h3>
+            <h2 class="job">General Motors - Controls Engineering Intern</h2>
+        </div>
+    </div>
+    <br>
+
+    <div class="work-entry">
         <img src="images/experiences/tesla.jpg" alt="Tesla Logo" class="work-logo">
         <div class="work-text">
             <br>
@@ -225,32 +235,42 @@
         <br>
         <div class="skills-container">
         <div>
-            <div class="tab1 active" onclick="showTabskills('technical')">
-                Technical
+            <div class="tab1 active" onclick="showTabskills('programming')">
+                Programming
+            </div>
+            <div class="tab1" onclick="showTabskills('hardware')">
+                Hardware
             </div>
             <div class="tab1" onclick="showTabskills('personal')">
                 Personal
             </div>
         </div>
-        <div id="technical" class="skills active">
+        <div id="programming" class="skills active">
             <ul>
                 <li>C/C++</li>
                 <li>Python (and associated libraries)</li>
-                <li>SPICE</li>
                 <li>Assembly (RISC-V)</li>
-                <li>PCB Design</li>
-                <li>Embedded Systems (I2C, SPI, CAN, UART)</li>
-                <li>Arduino + NUC (edge computing, automation pipelines)</li>
-                <li>REST APIs / API integration</li>
-                <li>Test automation</li>
-                <li>HTML/CSS/JavaScript</li>
+                <li>Go</li>
                 <li>Java</li>
-                <li>Oscilloscopes/Function Generators/DMMs</li>
-                <li>CAD</li>
+                <li>HTML/CSS/JavaScript</li>
                 <li>SQL</li>
-                <li>LaTeX</li>
                 <li>Git/Github</li>
                 <li>MATLAB</li>
+                <li>LaTeX</li>
+                <li>REST APIs / API integration</li>
+                <li>Test automation</li>
+            </ul>
+        </div>
+        <div id="hardware" class="skills">
+            <ul>
+                <li>PCBA Design (Altium, EAGLE, KiCad)</li>
+                <li>SPICE</li>
+                <li>PLC and CNC Programming, Machine Vision</li>
+                <li>Embedded Systems, Communication Protocols (I2C, SPI, CAN, UART)</li>
+                <li>MCU + NUC Automation pipelines</li>
+                <li>Oscilloscopes/Function Generators/DMMs</li>
+                <li>CAD (SolidWorks, AutoCAD)</li>
+                <li>Harness Design</li>
             </ul>
         </div>
         <div id="personal" class="skills">
@@ -276,13 +296,11 @@
         <p>&copy; 2025 Tyler Jung | All rights reserved</p>
         <p>made with love ❤️</p>
       </footer> 
+
+    <div id="particles-js"></div>
+    <script src="particles.js"></script>
+    <script src="app1.js"></script>
+    <script src="hometypewriter.js"></script>
+    <script src="hoverbar.js"></script>
 </body>
-<div id="particles-js">
-</div>
-<script src="particles.js"></script>
-<script src="app1.js"></script>
-
-
-  <script src="hometypewriter.js"></script>
-  <script src="hoverbar.js"></script>
 </html>

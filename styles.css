@@ -176,13 +176,33 @@ body {
 
 /* ========== MOBILE STYLES (max-width: 768px) ========== */
 @media screen and (max-width: 768px) {
-    .navbar___toggle {
-        display: flex;
-        z-index: 1001;
+    .navbar__container {
+        position: relative;
+        padding: 0 20px;
     }
 
-    .navbar__container {
-        padding: 0 20px;
+    .navbar___toggle {
+        display: flex;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        min-width: 44px;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        cursor: pointer;
+    }
+
+    .navbar___toggle.active {
+        transform: translateY(-50%);
+    }
+
+    .navbar__logo-image {
+        height: 55px;
     }
 
     .navbar__menu {
@@ -201,10 +221,14 @@ body {
         transition: right 0.3s ease;
         box-shadow: -4px 0 20px rgba(0,0,0,0.15);
         z-index: 1000;
+        pointer-events: none;
+        visibility: hidden;
     }
 
     .navbar__menu.active {
         right: 0;
+        pointer-events: auto;
+        visibility: visible;
     }
 
     .navbar__item {
@@ -1149,17 +1173,31 @@ footer {
 .school-container {
     display: flex;
     align-items: flex-start; 
-    gap: 40px; 
+    gap: 50px;
+    padding: 0.5rem 2rem;
+    margin-bottom: 0.5rem;
 }
 
 .school-logo {
-    margin-left:40px;
-    width: 80px; 
+    margin-left: 40px;
+    width: 120px; 
     height: auto; 
 }
 
-.school-text {
+.school-text,
+.school_text {
     display: flex;
+    flex-direction: column;
+}
+
+.school-container .school {
+    font-size: 2.25rem;
+    line-height: 1.3;
+}
+
+.school-container .year_major {
+    font-size: 22px;
+    color: rgb(101, 101, 8);
 }
 
 .year_major {
